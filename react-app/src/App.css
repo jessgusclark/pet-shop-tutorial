@@ -5,3 +5,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.alldogs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.dog {
+  grid-column-start: auto;
+  border:1px solid #c1c1c1;
+}
+
+.dog img {max-width: 150px;}

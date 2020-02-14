@@ -1,0 +1,2 @@
+export const REQUEST_ALL_DOGS = 'REQUEST_ALL_DOGS';
+export const RECIEVE_ALL_DOGS = 'RECIEVE_ALL_DOGS';

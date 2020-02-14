@@ -1,0 +1,40 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.alldogs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.dog {
+  grid-column-start: auto;
+  border:1px solid #c1c1c1;
+}
+
+.dog img {max-width: 150px;}
+
+button {
+  padding: 10px;
+  width:100%;
+}
+
+.owner, .owned {
+  text-align: center;
+  padding:10px;
+}
+
+.owner {
+  background-color: green;
+  color: #fff;
+}
+
+.owned {
+  background-color: yellow;
+}

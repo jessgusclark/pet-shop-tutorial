@@ -1,6 +1,10 @@
 import Web3 from 'web3';
-import { requestAllDogs, recieveAllDogs, requestAdoptionStatus, resolveAdoptionStatus } from './actions';
+import { 
+  requestAllDogs, recieveAllDogs, requestAdoptionStatus,
+  resolveAdoptionStatus, requestAdoption, recieveAdoption,
+} from './actions';
 import { adoptionAbi } from './abis.json';
+
 export const getAllDogs = (dispatch) => {
   dispatch(requestAllDogs());
 
@@ -20,3 +24,19 @@ export const getAllDogs = (dispatch) => {
     .catch(error => console.log('error', error));
 }
 
+export const adoptDog = async (petId, dispatch) => {
+  const web3 = new Web3(window.ethereum);
+  const adoption = new web3.eth.Contract(adoptionAbi, '0x7cb02118c4f0B9638B52125A8ba529D2518A66Da');
+  
+  dispatch(requestAdoption());
+
+  const accounts = await window.ethereum.enable();
+  const currentAddress = accounts[0];
+
+  adoption.methods.adopt(petId).send({from: currentAddress})
+  .then(result => {
+    dispatch(recieveAdoption(petId, currentAddress));
+  })
+  .catch(error => console.log('error', error));
+
+}

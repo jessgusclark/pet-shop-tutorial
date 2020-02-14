@@ -1,4 +1,5 @@
 import React from 'react';
+import AdoptButtonContainer from '../containers/AdoptButtonContainer';
 
 const DogComponent = ({data, isOwned}) => {
   return (
@@ -10,7 +11,7 @@ const DogComponent = ({data, isOwned}) => {
         <li><strong>Age</strong>: {data.age}</li>
         <li><strong>Location</strong>: {data.location}</li>
       </ul>
-      {!isOwned && <div>Adopt!</div>}
+      {!isOwned && <AdoptButtonContainer id={data.id} />}
     </div>
   )
 }

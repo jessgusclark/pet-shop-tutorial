@@ -1,6 +1,7 @@
 import {
   REQUEST_ALL_DOGS, RECIEVE_ALL_DOGS, REQUEST_ADOPTION_STATUS,
   RECIEVE_ADOPTION_STATUS, REQUEST_TO_ADOPT, RECIEVE_TO_ADOPT,
+  GET_USER_ADDRESS,
 } from './types';
 
 const initialState = {
@@ -9,6 +10,7 @@ const initialState = {
   requesting: false,
   dogs: [],
   adoptionStatus: [],
+  user: null,
 };
 
 const addressInputReducer = (state = initialState, action) => {
@@ -48,6 +50,11 @@ const addressInputReducer = (state = initialState, action) => {
           ...state.adoptionStatus,
           [action.petId]: action.ownerAddress,
         }
+      }
+    case GET_USER_ADDRESS:
+      return {
+        ...state,
+        user: action.address,
       }
     default:
       return state;

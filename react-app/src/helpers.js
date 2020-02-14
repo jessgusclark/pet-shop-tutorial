@@ -5,3 +5,11 @@ export const isPetOwned = (addr) => {
 
   return true;
 }
+
+export const isOwner = (currentAddress, petOwner) => {
+  if (petOwner === currentAddress){
+    return true;
+  }
+
+  return false;
+}

@@ -2,8 +2,14 @@ import Web3 from 'web3';
 import { 
   requestAllDogs, recieveAllDogs, requestAdoptionStatus,
   resolveAdoptionStatus, requestAdoption, recieveAdoption,
+  setUserAddress,
 } from './actions';
 import { adoptionAbi } from './abis.json';
+
+export const getUsersAddress = async (dispatch) => {
+  const accounts = await window.ethereum.enable();
+  dispatch(setUserAddress(accounts[0].toLowerCase()));
+}
 
 export const getAllDogs = (dispatch) => {
   dispatch(requestAllDogs());

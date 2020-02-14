@@ -5,7 +5,7 @@ import reducer from './reducer';
 import logger from 'redux-logger'
 
 import AllDogsContainer from './containers/AllDogsContainer';
-import { getAllDogs } from './operations';
+import { getAllDogs, getUsersAddress } from './operations';
 
 import './App.css';
 
@@ -14,6 +14,7 @@ const store = createStore(
   applyMiddleware(logger)
 )
 
+getUsersAddress(store.dispatch);
 getAllDogs(store.dispatch);
 
 function App() {

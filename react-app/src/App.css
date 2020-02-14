@@ -21,5 +21,20 @@ body {
 .dog img {max-width: 150px;}
 
 button {
+  padding: 10px;
   width:100%;
+}
+
+.owner, .owned {
+  text-align: center;
+  padding:10px;
+}
+
+.owner {
+  background-color: green;
+  color: #fff;
+}
+
+.owned {
+  background-color: yellow;
 }

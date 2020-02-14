@@ -1,7 +1,13 @@
 import {
   REQUEST_ALL_DOGS, RECIEVE_ALL_DOGS, REQUEST_ADOPTION_STATUS,
   RECIEVE_ADOPTION_STATUS, REQUEST_TO_ADOPT, RECIEVE_TO_ADOPT,
+  GET_USER_ADDRESS,
 } from './types';
+
+export const setUserAddress = address => ({
+  type: GET_USER_ADDRESS,
+  address,
+})
 
 export const requestAllDogs = () => ({
   type: REQUEST_ALL_DOGS,

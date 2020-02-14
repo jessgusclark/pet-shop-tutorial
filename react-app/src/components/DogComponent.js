@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DogComponent = ({data}) => {
+const DogComponent = ({data, isOwned}) => {
   return (
     <div className="dog">
       <h2>{data.name}</h2>
@@ -10,6 +10,7 @@ const DogComponent = ({data}) => {
         <li><strong>Age</strong>: {data.age}</li>
         <li><strong>Location</strong>: {data.location}</li>
       </ul>
+      {!isOwned && <div>Adopt!</div>}
     </div>
   )
 }
